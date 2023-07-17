@@ -1,0 +1,51 @@
+CREATE SCHEMA SepProject2;
+
+SET SCHEMA 'sepproject2';
+
+CREATE TABLE userr(
+    email varchar,
+    pasword varchar,
+    username varchar,
+    fName varchar,
+    lName varchar,
+    birth DATE,
+    user_id SERIAL PRIMARY KEY
+);
+
+CREATE TABLE reports(
+    report_id SERIAL PRIMARY KEY ,
+    user_reported_id int,
+    user_reporting_id int,
+    comment_id_reported int,
+    reason_of_report text
+);
+
+CREATE TABLE wishList(
+    item_id int,
+    user_id int
+);
+
+CREATE TABLE items(
+    title varchar,
+    price float,
+    description text,
+    user_id int,
+    is_sold boolean,
+    sub_category varchar,
+    url varchar,
+    item_id SERIAL PRIMARY KEY
+);
+
+CREATE TABLE administrator(
+    username varchar,
+    pasword varchar,
+    email varchar
+);
+
+CREATE TABLE comments(
+    textt text,
+    made_by_id int,
+    comment_id SERIAL PRIMARY KEY,
+    item_id int
+
+);
